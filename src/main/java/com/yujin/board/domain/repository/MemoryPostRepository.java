@@ -10,7 +10,7 @@ import java.util.Map;
 @Repository
 public class MemoryPostRepository implements PostRepository {
     private final Map<Long, Post> store = new HashMap<>();
-    private final Long sequence = 0L;
+    private long sequence = 0L;
 
     @Override
     public Post save(Post post) {
