@@ -16,14 +16,12 @@ public class PostController {
 
     // 메인 화면
     @GetMapping
-    public String list(){
+    public String list() {
         return "/post/postList";
     }
 
-
-
-
-
-
-
+    @GetMapping("/new")
+    public String createForm() {
+        return "post/postForm";
+    }
 }
