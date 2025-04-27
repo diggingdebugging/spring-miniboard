@@ -15,6 +15,20 @@
 
 <br>
 
-<a href="/posts">목록으로</a>
+<div>
+    <!-- 목록으로 -->
+    <a href="/posts">목록으로</a>
+
+    <!-- 수정 -->
+    <form th:action="@{/posts/{id}/edit(id=${post.id})}" method="get" style="display: inline;">
+        <button type="submit">수정</button>
+    </form>
+
+    <!-- 삭제 -->
+    <form th:action="@{/posts/{id}/delete(id=${post.id})}" method="post" style="display: inline;">
+        <button type="submit">삭제</button>
+    </form>
+</div>
+
 </body>
 </html>
