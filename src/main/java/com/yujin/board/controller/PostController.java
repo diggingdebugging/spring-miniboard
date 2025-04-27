@@ -5,10 +5,13 @@ import com.yujin.board.domain.repository.PostRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+
+import java.util.List;
 
 @Slf4j
 @Controller
@@ -19,7 +22,9 @@ public class PostController {
 
     // 메인 화면
     @GetMapping
-    public String list() {
+    public String list(Model model) {
+        List<Post> posts = postRepository.findAll();
+        model.addAttribute("posts", posts);
         return "/post/postList";
     }
 
