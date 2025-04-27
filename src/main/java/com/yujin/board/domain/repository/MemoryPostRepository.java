@@ -32,6 +32,7 @@ public class MemoryPostRepository implements PostRepository {
         return new ArrayList<>(store.values());
     }
 
+    // update
     @Override
     public void update(Long id, Post updatedPost) {
         Post post = findById(id);
@@ -39,6 +40,7 @@ public class MemoryPostRepository implements PostRepository {
         post.setContent(updatedPost.getContent());
     }
 
+    //delete
     @Override
     public void delete(Long id) {
         store.remove(id);
