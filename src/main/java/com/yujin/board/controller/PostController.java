@@ -53,4 +53,10 @@ public class PostController {
         model.addAttribute("post", post);
         return "post/postEdit";
     }
+
+    @PostMapping("/{id}/edit")
+    public String updatePost(@PathVariable Long id,@ModelAttribute Post updatedPost) {
+        postRepository.update(id, updatedPost);
+        return "redirect:/posts/" + id;
+    }
 }
